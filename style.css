@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: 'Mulish', sans-serif;
+}
+i,
+path,
+svg {
+	pointer-events: none;
+}
+button {
+	cursor: pointer;
+}
+.colors {
+	min-height: 80vh;
+	display: flex;
+}
+.color {
+	height: 80vh;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	align-items: center;
+	justify-content: space-evenly;
+	position: relative;
+	color: rgb(98, 98, 98);
+	overflow: hidden;
+}
+.color h2 {
+	margin-top: -10rem;
+	font-size: 2rem;
+	cursor: pointer;
+}
+.controls {
+	display: flex;
+	flex-direction: column;
+}
+.adjust,
+.lock {
+	padding: 1.2rem;
+	margin: 2rem;
+	border: none;
+	background: none;
+	font-size: 2.5rem;
+}
+.sliders {
+	padding: 1rem;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	background-color: white;
+	border-radius: 1rem;
+	position: absolute;
+	bottom: 0%;
+	transform: translateY(10rem);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.5s ease-in-out;
+}
+.sliders.active {
+	opacity: 1;
+	pointer-events: all;
+	transform: translateY(-1.5rem);
+}
+.sliders button {
+	position: absolute;
+	right: -3%;
+	top: -5%;
+	padding: 0.7rem 1rem;
+	border-radius: 5rem;
+	border: none;
+	background: rgb(71, 71, 71);
+	color: white;
+}
+.sliders div {
+	margin: 0.8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 90%;
+	font-size: 1.2rem;
+}
+.sliders input[type='range'] {
+	appearance: none;
+	-webkit-appearance: none;
+	width: 100%;
+	border-radius: 1rem;
+	margin: 1rem 0rem;
+}
+.panel {
+	min-height: 20vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.panel button {
+	padding: 1rem 2rem;
+	color: white;
+	background: #2b4869;
+	border: none;
+	border-radius: 1rem;
+	font-size: 1.8rem;
+}
+.panel p {
+	margin-top: 1.5rem;
+	font-size: 1.5rem;
+	letter-spacing: 0.2rem;
+}
+.library-panel,
+.generate-panel,
+.save-panel {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.copied-container,
+.save-container,
+.library-container {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	right: 0%;
+	bottom: 0%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 1s ease-in-out;
+}
+.copied-container.active,
+.save-container.active,
+.library-container.active {
+	opacity: 1;
+	pointer-events: all;
+}
+.copied-popup,
+.save-popup,
+.library-popup {
+	width: 30%;
+	height: 30%;
+	font-size: 1.8rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	background-color: white;
+	border-radius: 2rem;
+	transition: transform 1s ease;
+	transform: translateY(-3rem);
+	padding: 1rem;
+}
+.copied-popup.active,
+.save-popup.active,
+.library-popup.active {
+	transform: translateY(0rem);
+}
+.copied-popup h4 {
+	font-size: 2.5rem;
+}
+.close-save,
+.close-library {
+	position: absolute;
+	right: -3%;
+	top: -5%;
+	padding: 0.7rem 1rem;
+	border-radius: 5rem;
+	border: none;
+	background: rgb(71, 71, 71);
+	color: white;
+}
+.save-palette {
+	padding: 0.5rem;
+	font-size: 1.5rem;
+}
+
+.save-submit,
+.pick-palette-select,
+.pick-palette-delete {
+	padding: 0.8rem 2rem;
+	border: none;
+	color: white;
+	background-color: #2b4869;
+	font-size: 1.5rem;
+	border-radius: 0.5rem;
+}
+
+.library-popup {
+	min-width: 35%;
+	height: 40%;
+}
+.close-library {
+	top: -4%;
+	padding: 1rem 1.3rem;
+	border-radius: 5rem;
+}
+.allPalette {
+	overflow-y: scroll;
+	width: 100%;
+	height: 100%;
+}
+
+.custom-palette {
+	width: 100%;
+	height: 8rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.custom-palette h3,
+.custom-palette div {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.custom-palette .actionDiv {
+	flex: 2;
+}
+
+.actionDiv button {
+	margin: 1.5rem;
+}
+
+.small-preview {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.small-preview div {
+	height: 5rem;
+	width: 4rem;
+	flex: 1;
+}
